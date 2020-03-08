@@ -1,7 +1,6 @@
-FROM gcc:latest
-
-WORKDIR /home/dev
-COPY src/ src/
-
-RUN gcc -o hello src/main.c
-CMD ["./hello"]
+FROM openjdk:8
+RUN mkdir /src
+ADD HelloWorld.java /src/
+RUN cd / && javac /src/HelloWorld.java
+CMD java -cp /src HelloWorld
+ENTRYPOINT ["java", "-Djava.security.egd=file:/dev/./urandom", "HelloWorld"]
