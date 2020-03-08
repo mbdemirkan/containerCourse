@@ -1,0 +1,11 @@
+FROM gcc:latest as builder
+
+WORKDIR /home/dev
+COPY src/ src/
+RUN gcc -o hello src/main.c
+
+FROM frolvlad/alpine-glibc:latest
+
+WORKDIR /usr/project
+COPY --from=builder /home/dev/hello .
+CMD ["./hello"]
