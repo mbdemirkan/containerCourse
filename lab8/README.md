@@ -46,15 +46,15 @@ docker run -p 8080:8080 -p 8000:8000 test3
 
 8. pom.xml'e dependency ve build kısmında eklemeleri yap
 
-				<dependency>
-					<groupId>org.springframework.boot</groupId>
-					<artifactId>spring-boot-devtools</artifactId>
-					<scope>runtime</scope>
-				</dependency>
+<dependency>
+	<groupId>org.springframework.boot</groupId>
+	<artifactId>spring-boot-devtools</artifactId>
+	<scope>runtime</scope>
+</dependency>
 
-				<configuration>
-					<excludeDevtools>false</excludeDevtools>
-				</configuration>
+<configuration>
+	<excludeDevtools>false</excludeDevtools>
+</configuration>
 
 9. application.properties'e ekleme yap
 spring.devtools.remote.secret=mysecret
