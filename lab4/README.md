@@ -8,4 +8,3 @@ lxc-info --name mylxc
 lxc-start -n mylxc -d
 lxc-console -n mylxc -t 0
 lxc-stop -n mylxc
-

@@ -20,4 +20,3 @@ cp /lib/x86_64-linux-gnu/libpthread.so.0 /home/a/lib/x86_64-linux-gnu/libpthread
 echo world > /home/a/hello.txt
 #yeni bir sistem rootu olusturalim
 chroot /home/a /bin/bash
-
