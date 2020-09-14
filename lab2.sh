@@ -3,7 +3,6 @@
 ls -l /proc/$$/ns
 #sunucu anini okuyalim
 hostname
-
 #Yeni bir UTS namespace'li terminal acalim
 unshare -u bash
 #unshare komutu ile bir programi ayri bir namespace'de baslatabiliriz. -u parametresi yeni bir UTS namespace anlamina galiyor.
