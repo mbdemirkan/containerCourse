@@ -14,7 +14,7 @@ public class SimpleController {
 
 3. Docker Hub'da maven ara (maven:ibmjava-alpine)
 
-FROM maven:3.5.2-jdk-9  
+FROM maven:3.5.2-jdk-8
 COPY . /usr/src/app/
 RUN mvn -f /usr/src/app/pom.xml clean package
 
