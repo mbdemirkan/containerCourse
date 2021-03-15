@@ -1,19 +1,19 @@
 #Container Layer
-docker container run --name a1 -ti alpine sh
+docker container run --name u1 -ti ubuntu sh
 mkdir /data && cd /data && touch hello.txt
 exit
-docker inspect -f "{{ json .GraphDriver.Data }}" a1 | jq
+docker inspect -f "{{ json .GraphDriver.Data }}" u1 | jq
 cd $(docker container inspect -f "{{ json .GraphDriver.Data.UpperDir }}" a1 | sed 's/"//g')
 docker container rm a1
 
 #Volume on build
-docker image build -t img_a2 .
-docker container run --name a2 img_a2
+docker build -t img_u2 .
+docker container run --name u2 img_u2
 cd $(docker inspect -f "{{ json .Mounts }}" a2 | jq '.[] | .Source' | sed 's/"//g')
-docker container rm a2
+docker container rm u2
 
 #Volume at runtime
-docker container run --name a3 -d -v /data alpine sh -c 'ping 8.8.8.8 > /data/ping.txt'
+docker container run --name u3 -d -v /data alpine sh -c 'ping 8.8.8.8 > /data/ping.txt'
 cd $(docker inspect -f "{{ json .Mounts }}" a3 | jq '.[] | .Source' | sed 's/"//g')
 docker container rm a2
 

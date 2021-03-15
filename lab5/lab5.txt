@@ -1,0 +1,17 @@
+docker version
+docker search hello
+docker run hello-world
+docker pull nginx
+docker container create nginx
+docker container ls
+docker container ls -a
+docker start {{CONTAINER_ID}}
+docker stop {{CONTAINER_ID}}
+docker inspect {{CONTAINER_ID}}
+docker inspect {{CONTAINER_ID}} -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}'
+curl 172.17.0.2
+docker logs {{CONTAINER_ID}}
+
+lsns
+docker inspect {{CONTAINER_ID}} -f '{{ .State.Pid }}'
+/proc/{{PID}}/ns
